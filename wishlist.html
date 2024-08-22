@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <!-- ! Fontsawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ! Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        
+        <div class="row bg-grey py-2">
+            <div class="col-12 header-top d-flex justify-content-between px-5">
+                <div class="header-sign d-flex align-items-center">
+                    <a href="" class="me-2 fw-bold">Sign in</a>
+                    <span class="mx-1">or</span>
+                    <a href="" class="ms-2 fw-bold">Sign up</a>
+                </div>
+                <div class="header-helpinfo d-none d-sm-inline-block">
+                    <a href="#" class="text-black d-inline-block me-5">
+                        <i class="fa-solid fa-info me-2"></i>
+                        Info
+                    </a>
+                    <a href="#" class="text-black">
+                        <i class="fa-regular fa-circle-question me-1"></i>
+                        Help
+                    </a>
+                </div>
+                <div class="header-social-media">
+                    <a href="#" class="fa-brands fa-facebook-f me-4"></a>
+                    <a href="#" class="fa-brands fa-twitter me-4"></a>
+                    <a href="#" class="fa-brands fa-linkedin-in me-4"></a>
+                    <a href="#" class="fa-brands fa-glide-g"></a>
+                </div>
+            </div>
+        </div>
+        <h1 style="text-align: center;" class="header-wishlist" >Your Wishlist</h1>
+    </header>
+
+    <main class="wishlist-container mt-3">
+        <div id="wishlistItems" class="row"></div>
+    </main>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            displayWishlistItems();
+        });
+
+        function displayWishlistItems() {
+            const wishlistItemsContainer = document.getElementById('wishlistItems');
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // Clear the container before re-rendering
+            wishlistItemsContainer.innerHTML = '';
+
+            if (wishlist.length === 0) {
+                wishlistItemsContainer.innerHTML = '<p class= "d-flex justify-content-center mt-5 fw-bold fs-5" >Your wishlist is empty!!</p>';
+            } else {
+                wishlist.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'col-12 col-sm-6 col-lg-3 mb-2';
+                    itemElement.innerHTML = `
+                    <div class="card text-center">
+                        <img width="100px" height="250px" src="${item.image}" class="card-img-top p-3" alt="${item.title}">
+                        <div class="card-body">
+                            <h5 class="card-title text-orange fw-bold fs-4">${item.price}$</h5>
+                            <p class="card-text">${item.title}</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="#" class="btn bg-grey addToCart me-2" data-id="${item.id}">
+                                    <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                                </a>
+                                <a href="#" class="btn bg-grey removeFromWishlist" data-id="${item.id}">
+                                    <i class="fa-solid fa-trash"></i> Remove
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    wishlistItemsContainer.appendChild(itemElement);
+                });
+
+                // Add event listeners to the "Remove from Wishlist" buttons
+                document.querySelectorAll('.removeFromWishlist').forEach(button => {
+                    button.addEventListener('click', function (event) {
+                        event.preventDefault(); // Prevent default link behavior
+                        const productId = event.target.closest('.removeFromWishlist').dataset.id;
+                        removeFromWishlist(productId);
+                    });
+                });
+                // Add event listeners to the "Add to Cart" buttons (optional, currently does nothing)
+                document.querySelectorAll('.addToCart').forEach(button => {
+                    button.addEventListener('click', function (event) {
+                        event.preventDefault(); // Prevent default link behavior
+                        alert('Add to Cart functionality not implemented yet.');
+                    });
+                });
+
+            }
+        }
+
+        function removeFromWishlist(productId) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist = wishlist.filter(item => item.id != productId);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            displayWishlistItems(); // Re-render the wishlist
+            updateWishlistCount();  // Update the wishlist count in the navbar
+        }
+
+        function updateWishlistCount() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistCount = wishlist.length;
+            const wishlistBadge = document.getElementById('wishlistCount');
+
+            if (wishlistBadge) {
+                wishlistBadge.innerText = wishlistCount;
+            }
+        }
+    </script>
+
+    <!-- ! Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>

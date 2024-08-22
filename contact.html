@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!-- ! Fontsawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ! Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- ! External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- ! Header Kısmı Buradan Başlıyor -->
+    <header class="container-fluid">
+        <!-- ! Header 1 -->
+        <div class="row bg-grey py-2">
+            <div class="col-12 header-top d-flex justify-content-between px-5">
+                <div class="header-sign d-flex align-items-center">
+                    <a href="sign_in.html" target="_blank" class="me-2 fw-bold">Sign in</a>
+                    <span class="mx-1">or</span>
+                    <a href="sign_up.html" target="_blank" class="ms-2 fw-bold">Sign up</a>
+                </div>
+                <div class="header-helpinfo d-none d-sm-inline-block">
+                    <a href="#" class="text-black d-inline-block me-5">
+                        <i class="fa-solid fa-info me-2"></i>
+                        Info
+                    </a>
+                    <a href="#" class="text-black">
+                        <i class="fa-regular fa-circle-question me-1"></i>
+                        Help
+                    </a>
+                </div>
+                <div class="header-social-media">
+                    <a href="#" class="fa-brands fa-facebook-f me-4"></a>
+                    <a href="#" class="fa-brands fa-twitter me-4"></a>
+                    <a href="#" class="fa-brands fa-linkedin-in me-4"></a>
+                    <a href="#" class="fa-brands fa-glide-g"></a>
+                </div>
+            </div>
+        </div>
+        <!-- ! Header 2 -->
+        <div class="row border-bottom px-5 py-3">
+            <div class="col-12 header-center d-flex justify-content-between">
+                <div class="logo-section d-flex align-items-center">
+                    <a href="index.html">
+                        <img src="img/download.jfif" class="me-5 logo" alt="logo">
+                    </a>
+                    <p class="me-3 mb-0">Please select a language</p>
+                    <select class="me-3 d-none d-lg-inline-block" name="" id="">
+                        <option value="">TR</option>
+                        <option value="" selected>EN</option>
+                        <option value="">RO</option>
+                    </select>
+                </div>
+                <div class="user-section d-flex align-items-center">
+                    <ul class="d-flex m-0">
+                        <li>
+                            <a href="sign_up.html" target="_blank" class="text-black me-3">
+                                <i class="fa-solid fa-user"></i>
+                                User
+                            </a>
+                        </li>
+                        <li>
+                            <a href="wishlist.html" class="text-black me-3 d-none d-sm-block" target="_blank" >
+                                <i class="fa-solid fa-star"></i>
+                                Whistlist
+                                <span id="wishlistCount" class="badge bg-primary rounded-pill">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="text-black me-3 d-none d-sm-block" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop" id="cartButton">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                Cart
+                                <span id="cartCount" class="badge bg-primary rounded-pill">0</span>
+                            </a>
+                        </li>
+
+                        <!-- ! Modal in 2-->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header ">
+                                        <h1 class="modal-title mx-auto fs-2 " id="staticBackdropLabel">Cart</h1>
+                                        <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="head-container d-flex align-items-center ">
+                                            <h5 class="mh-image">Image</h5>
+                                            <h5 class="mh-description">Item Description</h5>
+                                            <h5 class="mh-quantity">Quantity</h5>
+                                            <h5 class="mh-unit">Unit Price</h5>
+                                            <h5 class="mh-sub">Subtotal</h5>
+                                        </div>
+                                        <ul>
+                                            <!-- <li class="modal-li list-unstyled">
+                                                <div class="product-info ">
+                                                    <div class="foto d-flex justify-content-around align-items-center ">
+                                                        <img width="100px" height="100px" src="" alt="">
+                                                        <div class="head-of-product">T-shirt</div>
+                                                        <div class="button-product">
+                                                            <button id="increase" class="btn btn-success ">+</button>
+                                                            <span class="quantity">1</span>
+                                                            <button id="decrease" class="btn btn-danger ">-</button>
+                                                        </div>
+                                                        <div class="price">xx euro</div>
+                                                        <div class="total-price">xxx euro</div>
+                                                        <i class="fa-solid fa-circle-xmark fs-3 "></i>
+                                                    </div>
+                                                </div>
+                                            </li> -->
+                                        </ul>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <p class="fw-bold shown-price">TOTAL PRICE: <span id="cartTotal">0$</span></p>
+                                        <button type="button" class="btn btn-secondary btn-clear">Clear</button>
+                                        <button type="button" class="btn btn-primary btn-checkout">Check Out</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <li>
+                            <a href="sign_in.html" target="_blank" class="text-black me-3">
+                                <i class="fa-solid fa-lock"></i>
+                                Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ! Header 3 -->
+        <nav class="navbar navbar-expand-lg bg-body-white">
+            <div class="container-fluid px-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-orange" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Shop
+                            </a>
+                            <ul class="dropdown-menu w-50">
+                                <li><a class="dropdown-item" href="#">Activewear</a></li>
+                                <li><a class="dropdown-item" href="#">Accessories</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">New arrivals</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Blogs
+                            </a>
+                            <ul class="dropdown-menu w-50">
+                                <li><a class="dropdown-item" href="#">Lifestyle</a></li>
+                                <li><a class="dropdown-item" href="#">Culture</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Designer Picks</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Deals
+                            </a>
+                            <ul class="dropdown-menu w-50">
+                                <li><a class="dropdown-item" href="#">Bundle Deals</a></li>
+                                <li><a class="dropdown-item" href="#">Best Sellers</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Limited Time Offers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="contact.html">Contact</a>
+                        </li>
+
+                        <!-- ! Header 3 (responsive) -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-block d-lg-none" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Category
+                            </a>
+                            <ul class="dropdown-menu w-50">
+                                <li><a class="dropdown-item" href="#">Sportswear</a></li>
+                                <li><a class="dropdown-item" href="#">Mens</a></li>
+                                <li><a class="dropdown-item" href="#">Womens</a></li>
+                                <li><a class="dropdown-item" href="#">Kids</a></li>
+                                <li><a class="dropdown-item" href="#">Fashion</a></li>
+                                <li><a class="dropdown-item" href="#">Households</a></li>
+                                <li><a class="dropdown-item" href="#">Interiors</a></li>
+                                <li><a class="dropdown-item" href="#">Clothing</a></li>
+                                <li><a class="dropdown-item" href="#">Bag</a></li>
+                                <li><a class="dropdown-item" href="#">Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-inline-block d-sm-none" aria-current="page"
+                                href="wishlist.html">whisht</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-inline-block d-sm-none" aria-current="page" href="#">Checkout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-inline-block d-sm-none " aria-current="page" href="#">Cart</a>
+                        </li>
+
+                        <!-- ! Button trigger modal in 3 -->
+                        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            Launch static backdrop modal
+                        </button> -->
+
+                        <!-- ! Modal in 3-->
+                        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Understood</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </ul>
+                    <div class="input-group w-75 search-box">
+                        <input type="text" class="form-control shadow-none" placeholder="Search"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-none bg-orange" type="button" id="button-addon2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ! Contact bölümünün içerik kısmı buradan başlıyor. -->
+
+    <!-- <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-md-8">
+                <h5 class="text-orange text-center mb-4">GET IN TOUCH</h5>
+                <form class="text-center">
+                    <input class="contact-input me-2 p-2 rounded-1" type="text" placeholder="Name">
+                    <input class="contact-input p-2 rounded-1" type="text" placeholder="Email">
+                    <input class="mt-3 p-2 w-90 rounded-1" type="text" placeholder="Subject">
+                    <input class="message-box mt-3 p-2 rounded-1 w-90" type="text" placeholder="Your message here">
+                </form>
+                <div class="buton w-90 m-auto d-flex justify-content-end">
+                    <button class="btn bg-orange text-white mt-4 rounded-0">Submit</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mt-5 text-center text-md-start">
+                <h5 class="text-orange text-center mb-4">CONTACT INFO</h5>
+                <p class="p-0 m-0">E-shopper Inc.</p>
+                <p class="p-0 m-0">935 W.Webster Ave New Streets Chicago,IL</p>
+                <p class="p-0 m-0">60614. NY</p>
+                <p class="p-0 m-0">Newyork USA</p>
+                <p class="p-0 m-0">Mobile: +2346 17 83 93</p>
+                <p class="p-0 m-0">Fax: 1-714-252-0026</p>
+                <p class="p-0 m-0">Email: info@e-shopper.com </p>
+                <h5 class="text-orange text-center my-4">SOCIAL NETWORKING</h5>
+                <div class="contact-social-media text-center">
+                    <i class="fa-brands fa-facebook-f me-4 fs-3"></i>
+                    <i class="fa-brands fa-twitter me-4 fs-3"></i>
+                    <i class="fa-brands fa-youtube me-4 fs-3"></i>
+                    <i class="fa-brands fa-glide-g fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- ~ benim content kismim -->
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12 col-md-7">
+                <h5 class="text-orange text-center mb-4">GET IN TOUCH</h5>
+                <form class="text-center">
+                    <div class="mb-2">
+                        <input class="contact-input p-2 rounded-1 w-100" type="text" placeholder="Full Name">
+                    </div>
+                    <div class="mb-2">
+                        <input class="contact-input p-2 rounded-1 w-100" type="text" placeholder="Email Address">
+                    </div>
+                    <div class="mb-2">
+                        <input class="contact-input p-2 rounded-1 w-100" type="text" placeholder="Phone Number">
+                    </div>
+                    <div class="mb-2">
+                        <input class="mt-3 p-2 rounded-1 w-100" type="text" placeholder="Subject">
+                    </div>
+                    <div class="mb-2">
+                        <textarea class="message-box mt-3 p-2 rounded-1 w-100" placeholder="Your message here" rows="3"></textarea>
+                    </div>
+                    <div class="mb-2">
+                        <input class="contact-input p-2 rounded-1 w-100" type="text" placeholder="Company Name (Optional)">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn bg-orange text-white mt-4 rounded-0 px-4">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-md-5 mt-5 text-center text-md-start">
+                <h5 class="text-orange text-center mb-4">CONTACT INFO</h5>
+                <p class="p-0 m-0">ShoppingerWave Solutions Ltd.</p>
+                <p class="p-0 m-0">500 Silicon Valley Blvd, Suite 700</p>
+                <p class="p-0 m-0">San Jose, CA 95131</p>
+                <p class="p-0 m-0">California, USA</p>
+                <p class="p-0 m-0">Mobile: +1 408-555-0199</p>
+                <p class="p-0 m-0">Fax: +1 408-555-0246</p>
+                <p class="p-0 m-0">Email: contact@techwave.com</p>
+                <p class="p-0 m-0">Customer Support: support@techwave.com</p>
+                <p class="p-0 m-0">Sales Inquiries: sales@techwave.com</p>
+                <p class="p-0 m-0">Partnerships: partners@techwave.com</p>                
+                <h5 class="text-orange text-center my-4">SOCIAL NETWORKING</h5>
+                <div class="contact-social-media text-center">
+                    <i class="fa-brands fa-facebook-f me-3 fs-3"></i>
+                    <i class="fa-brands fa-twitter me-3 fs-3"></i>
+                    <i class="fa-brands fa-youtube me-3 fs-3"></i>
+                    <i class="fa-brands fa-instagram me-3 fs-3"></i>
+                    <i class="fa-brands fa-linkedin-in me-3 fs-3"></i>
+                    <i class="fa-brands fa-glide-g fs-3"></i>
+                </div>
+                <h5 class="text-orange text-center my-4">OFFICE HOURS</h5>
+                <p class="p-0 m-0">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p class="p-0 m-0">Saturday: 10:00 AM - 4:00 PM</p>
+                <p class="p-0 m-0">Sunday: Closed</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- ! Footer Kısmı Buradan Başlıyor -->
+    <div class="container-fluid mt-5 pt-4 px-0 bg-light-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-3">
+                    <h3 class="fs-5 mt-3"><span class="text-orange">E</span>-SHOPPINGER</h3>
+                    <p class="fs-7">
+                        Now you can make your shopping on internet very easily ! just enjoy the page !
+                    </p>
+                </div>
+                <div class="col-6 col-sm-9">
+                    <img class="d-none d-xl-inline-block" src="img/footer-photo1.PNG" alt="">
+                    <img class="d-none d-sm-inline-block" src="img/footer-photo2.PNG" alt="">
+                    <img src="img/footer-photo3.PNG" alt="">
+                    <img src="img/footer-photo4.PNG" alt="">
+                    <img class="d-none d-sm-inline-block ms-5" src="img/footer-photo5.PNG" alt="">
+                </div>
+            </div>
+        </div>
+        <hr class="m-0 p-0">
+        <!-- ! Footer 2 (untouched) -->
+        <div class="container-fluid container-md mb-5">
+            <div class="row mt-3">
+                <div class="col-12 col-sm-8 mt-3 d-flex justify-content-between">
+                    <div class="service">
+                        <h5 class="fs-5">SERVICE</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h5 class="fs-5">QUICK SHOP</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h5 class="fs-5">POLICIES</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h5 class="fs-5">ABOUT SHOPPER</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service col-12 col-sm-4 mt-3">
+                    <h5 class="fs-5 text-center w-100">ABOUT SHOPPER</h5>
+                    <div class="right-section d-flex flex-column align-items-end">
+                        <div class="input-group mb-3 w-75">
+                            <input type="text" class="form-control shadow-none" placeholder="Your email adress"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-black bg-orange" type="button" id="button-addon2">
+                                <i class="fa-regular fa-circle-right text-white"></i>
+                            </button>
+                        </div>
+                        <p class="fs-7 w-75">Get the most recent updates from our site and be updated your self... </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ! Footer 3 (github link given) -->
+        <div class="footer-denemesi container-fluid bg-grey p-0">
+            <div class="container   ">
+                <div class="footer-bottom d-flex justify-content-between">
+                    <p>Copyright © 2024 E-SHOPPINGER Inc. All rights reserved</p>
+                    <div class="d-flex">
+                        <p class="d-none d-sm-inline-block me-5">Designed by <span><a class="text-orange"
+                                    href="https://github.com/Muratincel" target="_blank">Murat</a>
+                            </span></p>
+                        <div class="bg-orange chevron-up text-center">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ! Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- ! External JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

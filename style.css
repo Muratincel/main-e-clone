@@ -1,0 +1,276 @@
+/*  ! Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+.bg-grey {
+    background-color: rgba(128, 128, 128, 0.24);
+}
+
+.text-orange {
+    color: orange;
+}
+
+.px-6 {
+    padding-inline: 20px;
+}
+
+.ps-6 {
+    padding-left: 20%;
+    /* padding-right: 10%; */
+}
+
+.fs-7 {
+    font-size: 12px;
+}
+
+.fs-8 {
+    font-size: 14px;
+}
+
+.bg-light-grey {
+    background-color: #F0F0E9;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+.chevron-up {
+    width: 40px;
+}
+
+@media screen and (max-width:546px) {
+    .service h5 {
+        font-size: 14px !important;
+    }
+
+    .service ul li a {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width:453px) {
+    .footer-bottom p {
+        font-size: 12px;
+        margin: auto;
+    }
+}
+
+
+/* ! Login sayfasının css kısmı başlıyor */
+.or {
+    background-color: orange;
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-input {
+    width: 45%;
+}
+
+.w-90 {
+    width: 92%;
+}
+
+.message-box {
+    height: 150px;
+}
+
+.color-grey {
+    color: grey;
+}
+
+.btn {
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background-color: orange;
+    transform: scale(1.1);
+}
+
+/* ! Ürün Silmek İçin Kullandığım Css kodu */
+.sil {
+    display: none;
+}
+
+/* !my own header */
+
+.header-helpinfo{
+    margin-right: 50%;
+}
+
+@media (max-width: 1050px) {
+    .header-helpinfo {
+        margin-right: 35%;
+    }
+}
+
+@media (max-width: 850px) {
+    .header-helpinfo {
+        margin-right: 150px;
+    }
+}
+@media (max-width: 730px) {
+    .header-helpinfo {
+        margin-right: 0px;
+    }
+}
+
+.logo{
+    height: 50px;
+    scale: 160%;
+}
+
+.header-wishlist {
+    background-color: rgb(252, 173, 93);
+}
+
+/* !searchbox css */
+
+.search-box {
+    border: 3px solid #333; 
+    border-radius: 30px; 
+    overflow: hidden; 
+}
+
+.search-box .form-control {
+    border: none; 
+    border-radius: 30px 0 0 30px; 
+    padding: 10px 20px; 
+}
+
+.search-box .btn {
+    border: none; 
+    border-radius: 0 30px 30px 0; 
+    padding: 10px 20px; 
+    background-color: #FFAC00; 
+}
+
+.search-box .btn i {
+    color: white; 
+}
+
+.carousel-image {
+    height: 600px;
+    object-fit: fill ;
+    width: 65%;
+}
+
+/* ! modal css */
+
+.modal-header {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.modal-title {
+    flex: 1; 
+    text-align: center; 
+}
+
+.btn-close {
+    margin-left: auto; 
+}
+
+.head-of-product {
+    width: 500px;
+}
+
+.button-product {
+    width: 120px;
+}
+
+.price {
+    width: 100px;
+    text-align: center ;
+}
+
+.total-price {
+    width: 100px;
+    text-align: center ;
+}
+
+.mh-image {
+    padding-left: 3rem;
+}
+.mh-description {
+    padding-left: 10rem;
+}
+
+.mh-quantity {
+    padding-left: 16rem;
+}
+
+.mh-unit {
+    padding-left: 5rem;
+}
+
+.mh-sub {
+    padding-left: 3rem;
+}
+
+.removeItem {
+    cursor: pointer; /* Ensure it's clear that the element is clickable */
+    z-index: 10; /* Bring the icon to the front */
+    position: relative; /* Ensure it's positioned properly */
+}
+
+/* ! urunler */
+
+.urunler {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if they overflow */
+    gap: 16px; /* Adds space between the items */
+    justify-content: flex-start;
+}
+
+.urunler .col-12 {
+    flex: 1 1 calc(33.33% - 16px); 
+    /* flex: unset; */
+    box-sizing: border-box;
+}
+
+.card-text {
+    height: 60px;
+    overflow: hidden;
+}
+
+@media (min-width: 1400px) {
+    .urunler .col-12 {
+        flex: 0 1 calc(25% - 16px); /* Four items per row on XXL screens */
+    }
+}
+
+/* Ensure that the cards are responsive and maintain their size on different screen sizes */
+@media (max-width: 768px) {
+    .urunler .col-12 {
+        flex: 1 1 calc(50% - 16px); /* Two items per row on small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .urunler .col-12 {
+        flex: 1 1 100%; /* One item per row on extra-small screens */
+    }
+}
+
+/* ! for the fixed navbar */

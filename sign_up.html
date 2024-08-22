@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+
+    <!-- ! Fontsawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ! Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- ! External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ~ Header  -->
+    <header class="container-fluid">
+        <!-- ! Header -->
+        <div class="logo-section d-flex align-items-center">
+            <a href="index.html">
+                <img src="img/download.jfif" class="me-5 logo" alt="logo">
+            </a>
+            <p class="me-3 mb-0">Please select a language</p>
+            <select class="me-3 d-none d-lg-inline-block" name="" id="">
+                <option value="">TR</option>
+                <option value="" selected>EN</option>
+                <option value="">RO</option>
+            </select>
+        </div>
+    </header>
+    <!-- ! Center of content -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5">
+                <h5 class="mt-5 mb-4 text-center">New User Signup! </h5>
+                <form>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control mb-2 bg-grey shadow-none" placeholder="Name"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control bg-grey shadow-none mb-2" placeholder="Email Adress"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control bg-grey shadow-none" placeholder="Password"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </form>
+                <div class="text-center">
+                    <button class="btn bg-orange rounded-0 mt-2 text-white">Sign Up</button>
+                </div>
+                <div class="text-center mt-3">
+                    <p>
+                        Do you already have an account? <a href="sign_in.html" class="text-primary">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ! Carousel -->
+
+    <div id="carouselExample" class="carousel slide mt-5">
+        <div class="carousel-inner ">
+            <div class="carousel-item active ">
+                <img src="img/carousel1.webp" class="carousel-image d-block mx-auto " alt="...">
+                <div class="carousel-caption d-none d-md-block ">
+                    <h1 class="text-black fw-bold "> <a href="index.html" target="_blank">You can click here and start
+                            shopping !</a> </h1>
+                    <p class="text-black fw-bold mt-3 ">or slide to see pictures of more women shopping !</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel2.jpg" class="carousel-image d-block mx-auto" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carousel3.jpg" class="carousel-image d-block mx-auto" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <!-- ! Footer  -->
+    <div class="container-fluid mt-5 pt-4 px-0 bg-light-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-3">
+                    <h3 class="fs-5 mt-3"><span class="text-orange">E</span>-SHOPPINGER</h3>
+                    <p class="fs-7">
+                        Now you can make your shopping on internet very easily ! just enjoy the page !
+                    </p>
+                </div>
+                <div class="col-6 col-sm-9">
+                    <img class="d-none d-xl-inline-block" src="img/footer-photo1.PNG" alt="">
+                    <img class="d-none d-sm-inline-block" src="img/footer-photo2.PNG" alt="">
+                    <img src="img/footer-photo3.PNG" alt="">
+                    <img src="img/footer-photo4.PNG" alt="">
+                    <img class="d-none d-sm-inline-block ms-5" src="img/footer-photo5.PNG" alt="">
+                </div>
+            </div>
+        </div>
+        <hr class="m-0 p-0">
+        <!-- ! Footer 2 (untouched) -->
+        <div class="container-fluid container-md mb-5">
+            <div class="row mt-3">
+                <div class="col-12 col-sm-8 mt-3 d-flex justify-content-between">
+                    <div class="service">
+                        <h5 class="fs-5">SERVICE</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h5 class="fs-5">QUICK SHOP</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h5 class="fs-5">POLICIES</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <h5 class="fs-5">ABOUT SHOPPER</h5>
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a class="fs-8" href="#">Online Help</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Contact Us</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Order Status</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">Change Location</a>
+                            </li>
+                            <li>
+                                <a class="fs-8" href="#">FAQ's</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service col-12 col-sm-4 mt-3">
+                    <h5 class="fs-5 text-center w-100">ABOUT SHOPPER</h5>
+                    <div class="right-section d-flex flex-column align-items-end">
+                        <div class="input-group mb-3 w-75">
+                            <input type="text" class="form-control shadow-none" placeholder="Your email adress"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-black bg-orange" type="button" id="button-addon2">
+                                <i class="fa-regular fa-circle-right text-white"></i>
+                            </button>
+                        </div>
+                        <p class="fs-7 w-75">Get the most recent updates from our site and be updated your self... </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ! Footer 3 (github link given) -->
+        <div class="footer-denemesi container-fluid bg-grey p-0">
+            <div class="container   ">
+                <div class="footer-bottom d-flex justify-content-between">
+                    <p>Copyright © 2024 E-SHOPPINGER Inc. All rights reserved</p>
+                    <div class="d-flex">
+                        <p class="d-none d-sm-inline-block me-5">Designed by <span><a class="text-orange"
+                                    href="https://github.com/Muratincel" target="_blank">Murat</a>
+                            </span></p>
+                        <div class="bg-orange chevron-up text-center">
+                            <i class="fa-solid fa-chevron-up"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! Advertisement Modal -->
+    <div class="modal fade" id="advertisementModal" tabindex="-1" aria-labelledby="advertisementModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="advertisementModalLabel">Special Offer!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Advertisement content goes here -->
+                    <p>This is an advertisement. <a class="fw-bold" target="_blank"
+                            href="https://www.google.com/search?q=advertisement">Click here</a>
+                        to learn more !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ! non blocking customized alert -->
+    <div id="notification"
+        style="position: fixed; top: 10px; right: 10px; display: none; background-color: #ffac5f; color: black; padding: 10px; border-radius: 5px; z-index: 1000; left: 50%; transform: translateX(-50%); ">
+    </div>
+
+
+    <!-- ! Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- ! External JS -->
+    <script src="script.js"></script>
+
+    <!-- & Back-end alerts -->
+    <script>
+        window.onload = function () {
+            alert("Welcome to my Sign Up page! The functionality will be given after backend project is done.");
+        };
+    </script>
+
+</body>
+
+</html>

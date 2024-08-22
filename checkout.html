@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    
+    <!-- ! FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ! internal css -->
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checkout-container {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-container h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .checkout-items ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .checkout-items li {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .checkout-items img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .checkout-items .product-details {
+            flex: 1;
+        }
+
+        .checkout-items .product-title {
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        .checkout-items .product-price,
+        .checkout-items .product-quantity,
+        .checkout-items .product-total {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .checkout-summary {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .checkout-summary .total-price {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .checkout-summary .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkout-summary .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align: center;" >Checkout</h1>
+    </header>
+
+    <main class="checkout-container">
+        <section class="checkout-items">
+            <ul id="checkoutItems" class="list-unstyled"></ul>
+        </section>
+
+        <section class="checkout-summary">
+            <div id="checkoutTotal" class="total-price"></div>
+            <button id="payButton" class="btn-primary">Pay Now</button>
+        </section>
+    </main>
+
+    <!-- ! this page codes here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve cart data from localStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Display cart items and total price
+            const checkoutItemsContainer = document.getElementById('checkoutItems');
+            let totalCheckoutPrice = 0;
+
+            if (cart.length === 0) {
+                checkoutItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                document.getElementById('checkoutTotal').innerText = '0$';
+                return;
+            }
+
+            cart.forEach((item) => {
+                totalCheckoutPrice += parseFloat(item.totalPrice);
+
+                checkoutItemsContainer.innerHTML += `
+                    <li class="checkout-item">
+                        <div class="product-info">
+                            <img width="100px" height="100px" src="${item.image}" alt="">
+                            <div class="product-details">
+                                <div class="product-title">${item.title}</div>
+                                <div class="product-price">${item.price}$</div>
+                                <div class="product-quantity">Quantity: ${item.quantity}</div>
+                                <div class="product-total">${item.totalPrice}$</div>
+                            </div>
+                        </div>
+                    </li>
+                `;
+            });
+
+            // Display total price
+            document.getElementById('checkoutTotal').innerText = `Total: ${totalCheckoutPrice.toFixed(2)}$`;
+
+            // Optionally, add functionality to the pay button
+            document.getElementById('payButton').addEventListener('click', function () {
+                alert('This is just a sample project, you can not pay anything here ! :))');
+                // You could handle the payment process here
+            });
+
+            // Clear cart data from localStorage
+            localStorage.removeItem('cart');
+        });
+    </script>
+
+</body>
+
+</html>
